@@ -45,11 +45,6 @@ nav{
     padding: 2vw 10vw;
     z-index: 10;
 }
-/* nav:hover #bottom-nav{
-    height: 150%;
-    bottom: -150%;
-    background-color: #111;
-} */
 .nav-list{
     display: flex;
     align-items: flex-start;
@@ -86,19 +81,6 @@ nav{
     background-color: #111;
     z-index: 9;
 }
-/* #bottom-nav h5{
-    margin-bottom: 0.4vw;
-    overflow: hidden;
-}
-.bottom-div{
-    margin-top: 2vw;
-}
-#bottom-nav h5 span{
-    display: inline-block;
-    font-size: 0.7vw;
-    font-weight: 500;
-    opacity: 0;
-} */
 nav button{
     display: flex;
     align-items: center;
@@ -271,7 +253,69 @@ nav button svg{
     left: 0;
     top: 0;
     scale: 0;
-    transition: opacity ease-in-out 0.4s, scale ease-in-out 0.4s, left ease-out 0.1s, top ease-out 0.1s;
+    transition: opacity ease-in-out 0.4s, scale ease-in-out 0.4s, left ease-out 0.16s, top ease-out 0.16s;
     pointer-events: none;
     z-index: 3;
+}
+
+
+#page3{
+    height: 100dvh;
+    width: 100%;
+    position: relative;
+    background: url("./images/Video img.webp");
+    background-image: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.video-play{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vw;
+}
+.video-play .icon{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.video-play .icon i{
+    color: black;
+    font-size: 2.2vw;
+}
+.video-play h5{
+    font-size: 0.8vw;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: white;
+    color: #111;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(15%);
+    transition: all ease 0.5s;
+}
+.video-play .icon:hover + h5{
+    opacity: 1;
+    transform: translateY(0%);
+}
+#page3 video{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: 35%;
+    object-fit: cover;
+    transform: scaleX(0.7) scaleY(0);
+    border-radius: 50px;
+    opacity: 0;
+    z-index: 9999;
 }
