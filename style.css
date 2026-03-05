@@ -394,10 +394,13 @@ nav button svg {
 
 
 #page4 {
-    height: 100dvh;
+    min-height: 100dvh;
     width: 90%;
     margin: 0 auto;
     background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .text-container {
@@ -451,6 +454,7 @@ nav button svg {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     padding-bottom: 4vw;
+    position: relative;
 }
 #page4 .card-container .card{
     border-radius: 10px;
@@ -480,4 +484,126 @@ nav button svg {
 }
 .card-container .card div p:nth-child(2){
     color: #a6a6a6;
+}
+
+
+#page5{
+    min-height: 100dvh;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.section-one, .section-two{
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10vh 0;
+}
+.section-two{
+    padding-top: 0;
+    align-items: flex-start;
+}
+.sec-left{
+    height: 80vh;
+    width: 25%;
+    border-top: 2px solid black;
+    padding-top: 3vh;
+}
+.sec-right{
+    height: 100%;
+    width: 70%;
+    position: relative;
+}
+.sec-left h2{
+    font-size: 2.1vw;
+    font-weight: 500;
+    color: #111;
+}
+.sec-left p{
+    color: #111;
+    margin-top: 10vh;
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+.sec-right img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.sec-right video{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: opacity ease 0.3s;
+}
+#page5 .section-three{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 9vw;
+}
+#page5 .section-three .block-one{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 30%;
+    padding: 2vh 1vw;
+    gap: 2vw;
+    border-top: 2px solid #111;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 35vh;
+}
+.section-three .block-one h2,.section-three .block-one p{
+    color: #111;
+    font-family: 'NeueHaas';
+}
+.section-three .block-one h2{
+    font-weight: 400;
+    font-size: 2.1vw;
+}
+.block-one .p-wrapper{
+    grid-row: 2;
+    overflow: hidden;
+    opacity: 1;
+    transition: all ease 0.2s;
+    margin-top: 8vh;
+}
+.section-three .block-one p{
+    font-size: 1.2vw;
+}
+.section-three .block-one .thumbnail{
+    height: 35vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all ease 0.3s;
+    padding: 0 1vw;
+}
+.section-three .block-one .thumbnail img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.section-three .block-one .thumbnail video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 1vw;
+    transition: opacity ease 0.2s;
+    opacity: 0;
+}
+.block-one:hover .thumbnail{
+    height: 53vh;
+}
+.block-one:hover .p-wrapper{
+    opacity: 0;
 }

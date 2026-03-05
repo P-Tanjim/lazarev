@@ -73,6 +73,33 @@ function page3Animation() {
 const rightElem = document.querySelectorAll(".right-elem");
 const videoPlay = document.querySelector(".video-play .icon");
 const video = document.querySelector("#page3 video");
+const rightSecVideo = document.querySelectorAll(".sec-right");
+const pageFiveBottomVideo = document.querySelectorAll('.block-one');
+
+rightSecVideo.forEach((elem) => {
+    elem.addEventListener("mouseenter", () => {
+        elem.querySelector("video").style.opacity= 1;
+        elem.querySelector('video').currentTime = 0;
+        elem.querySelector('video').play();
+    })
+    elem.addEventListener("mouseleave", () => {
+        elem.querySelector("video").style.opacity= 0;
+        elem.querySelector('video').pause();
+    })
+});
+
+pageFiveBottomVideo.forEach((elem) => {
+    const video = elem.querySelector("video");
+    elem.addEventListener("mouseenter", () => {
+        video.style.opacity = 1;
+        video.currentTime = 0;
+        video.play();
+    });
+    elem.addEventListener("mouseleave", () => {
+        video.style.opacity= 0;
+        video.pause();
+    })
+});
 
 navAnimation();
 page2Animation();
