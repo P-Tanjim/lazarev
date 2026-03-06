@@ -755,3 +755,65 @@ details[open]::details-content{
 details[open] i{
     rotate: 180deg;
 }
+
+
+#page7{
+    width: 100%;
+    background-color: #111;
+}
+#page7 .content{
+    margin: 0 auto;
+    padding: 12vh 0vw;
+    width:90%;
+    border-top: 1px solid #333;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3.5vw;
+}
+#page7 .content h4{
+    font-family: 'NeueHaas';
+    font-size: 1vw;
+    font-weight: 400;
+}
+#page7 .content h2{
+    font-family: 'NeueHaas';
+    font-weight: 400;
+    font-size: 2vw;
+    width: 70%;
+}
+#page7 .content .digital-card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+    margin-top: 5vh;
+}
+#page7 .content .digital-card .card{
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 2.5vw;
+    cursor: pointer;
+}
+#page7 .content .digital-card .card>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#page7 .content .digital-card .card h3{
+    font-size: 1.5vw;
+    font-family: 'NeueHaas';
+    font-weight: 500;
+}
+#page7 .content .digital-card .card i{
+    font-size: 1.2vw;
+}
+#page7 .content .digital-card .card p{
+    font-family: 'NeueHaas';
+    font-size: 1vw;
+    color: #cdcdcd;
+    font-weight: 400;
+    margin-top: 11vh;
+}
