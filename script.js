@@ -70,37 +70,64 @@ function page3Animation() {
     });
 }
 
+function page5Animation() {
+    rightSecVideo.forEach((elem) => {
+        elem.addEventListener("mouseenter", () => {
+            elem.querySelector("video").style.opacity = 1;
+            elem.querySelector('video').currentTime = 0;
+            elem.querySelector('video').play();
+        })
+        elem.addEventListener("mouseleave", () => {
+            elem.querySelector("video").style.opacity = 0;
+            elem.querySelector('video').pause();
+        })
+    });
+
+    pageFiveBottomVideo.forEach((elem) => {
+        const video = elem.querySelector("video");
+        elem.addEventListener("mouseenter", () => {
+            video.style.opacity = 1;
+            video.currentTime = 0;
+            video.play();
+        });
+        elem.addEventListener("mouseleave", () => {
+            video.style.opacity = 0;
+            video.pause();
+        })
+    });
+}
+
+function sliderAnimation() {
+    pageSixSliderBox.forEach((elem) => {
+        const over = elem.querySelector(".over");
+        elem.addEventListener("mouseenter", () => {
+            over.style.transition = "transform cubic-bezier(0.19, 1, 0.22, 1) 0.8s";
+            over.style.transform = "translateY(0%)";
+        });
+        elem.addEventListener("mouseleave", () => {
+            over.style.transition = "transform ease 0.3s";
+            over.style.transform = "translateY(100%)";
+            over.addEventListener("transitionend", () => {
+                console.log("work")
+                over.style.transition = "none";
+                over.style.transform = "translateY(-100%)";
+                console.log("woek")
+            });
+        });
+    });
+}
+
 const rightElem = document.querySelectorAll(".right-elem");
 const videoPlay = document.querySelector(".video-play .icon");
 const video = document.querySelector("#page3 video");
 const rightSecVideo = document.querySelectorAll(".sec-right");
 const pageFiveBottomVideo = document.querySelectorAll('.block-one');
+const pageSixSliderBox = document.querySelectorAll('.page6-elem');
 
-rightSecVideo.forEach((elem) => {
-    elem.addEventListener("mouseenter", () => {
-        elem.querySelector("video").style.opacity= 1;
-        elem.querySelector('video').currentTime = 0;
-        elem.querySelector('video').play();
-    })
-    elem.addEventListener("mouseleave", () => {
-        elem.querySelector("video").style.opacity= 0;
-        elem.querySelector('video').pause();
-    })
-});
 
-pageFiveBottomVideo.forEach((elem) => {
-    const video = elem.querySelector("video");
-    elem.addEventListener("mouseenter", () => {
-        video.style.opacity = 1;
-        video.currentTime = 0;
-        video.play();
-    });
-    elem.addEventListener("mouseleave", () => {
-        video.style.opacity= 0;
-        video.pause();
-    })
-});
 
 navAnimation();
 page2Animation();
 page3Animation();
+page5Animation();
+sliderAnimation();
