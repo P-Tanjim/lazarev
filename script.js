@@ -117,6 +117,20 @@ function sliderAnimation() {
     });
 }
 
+function page8ScrollAnimation() {
+        gsap.from(".scroll-animated-tex-box h4", {
+            x: 0,
+            duration: 5,
+            scrollTrigger: {
+                trigger: ".scroll-animated-tex-box",
+                scroller: "body",
+                start: "top 75%",
+                end: "top -10%",
+                markers: true,
+                scrub: true
+            }
+        });
+}
 const rightElem = document.querySelectorAll(".right-elem");
 const videoPlay = document.querySelector(".video-play .icon");
 const video = document.querySelector("#page3 video");
@@ -124,10 +138,9 @@ const rightSecVideo = document.querySelectorAll(".sec-right");
 const pageFiveBottomVideo = document.querySelectorAll('.block-one');
 const pageSixSliderBox = document.querySelectorAll('.page6-elem');
 
-
-
 navAnimation();
 page2Animation();
 page3Animation();
 page5Animation();
 sliderAnimation();
+page8ScrollAnimation();

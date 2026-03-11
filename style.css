@@ -752,7 +752,7 @@ details::details-content{
 details[open]::details-content{
     block-size: auto;
 }
-details[open] i{
+details[open] .titleBox i{
     rotate: 180deg;
 }
 
@@ -777,6 +777,7 @@ details[open] i{
     font-family: 'NeueHaas';
     font-size: 1vw;
     font-weight: 400;
+    text-transform: capitalize;
 }
 #page7 .content h2{
     font-family: 'NeueHaas';
@@ -787,7 +788,7 @@ details[open] i{
 #page7 .content .digital-card{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 8px;
     text-align: left;
     margin-top: 5vh;
 }
@@ -802,13 +803,16 @@ details[open] i{
     justify-content: space-between;
     align-items: center;
 }
+#page7 .content .digital-card .card>div i{
+    font-size: 2vw;
+}
 #page7 .content .digital-card .card h3{
     font-size: 1.5vw;
     font-family: 'NeueHaas';
     font-weight: 500;
 }
-#page7 .content .digital-card .card i{
-    font-size: 1.2vw;
+#page7 .content .digital-card .card h4 i{
+    font-weight: 100;
 }
 #page7 .content .digital-card .card p{
     font-family: 'NeueHaas';
@@ -816,4 +820,170 @@ details[open] i{
     color: #cdcdcd;
     font-weight: 400;
     margin-top: 11vh;
+}
+
+
+#page8{
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+    padding: 10vh 10vw;
+    position: relative;
+}
+#page8>h1{
+    font-size: 5.5vw;
+    color: #111;
+    margin: 0 auto;
+    line-height: 5.8vw;
+    text-align: center;
+    padding-left: 5vw; 
+    padding-bottom: 10vh;
+    border-bottom: 1px solid #dadada;
+}
+#page8 .page8-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 12vh;
+}
+#page8 .page8-content .right-sec-six{
+    width: 70%;
+}
+#page8 .page8-content .right-sec-six p{
+    font-size: 1.5vw;
+    color: #111;
+    margin-bottom: 5vh;
+    width: 80%;
+}
+#blue-btn{
+    background-color: #4f5bff;
+    width: 15vw;
+    height: 3.5vw;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 15%;
+}
+#blue-btn h4{
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.85vw;
+}
+#blue-btn h4 i{
+    font-size: 1.2vw;
+    font-weight: 100;
+    margin-left: 0.5vw;
+}
+.page8-bottom{
+    position: relative;
+    height: 40vh;
+    width: 100%;
+    border-top: 1px solid #dadada;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+#left-empty-box{
+    border-right: 1px solid #cbbaba;
+    width: 30%;
+    height: 100%;
+    
+}
+#text-box-one{
+    border-right: 1px solid #cbbaba;
+    width: 28%;
+    height: 100%;
+    
+}
+#text-box-two{
+    border-right: 1px solid #cbbaba;
+    width: 15%;
+    height: 100%;   
+}
+#text-box-three{
+    border-right: 1px solid #cbbaba;
+    width: 15%;
+    height: 100%;
+    
+}
+#last-empty-box{
+    width: 15%;
+    height: 100%;
+}
+.page8-bottom>div>h5{
+    color: #111;
+    font-weight: 500;
+    font-size: 0.95vw;
+    margin-bottom: 7vh;
+}
+.page8-bottom>div{
+    padding: 3vh 0.5vw;
+}
+.page8-bottom>div>h4{
+    background-color: #111;
+    width: 70%;
+    padding: 5px 5px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.9vw;
+    display: flex;
+    align-items: center;
+    gap:  1vw;
+    margin-bottom: 2px;
+}
+.page8-bottom>div>h4>span{
+    background-color: #333;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+#text-box-two>h4{
+    width: 100%;
+}
+#text-box-three>h4{
+    width: 90%;
+}
+#text-box-one h4:nth-child(2){
+    transform: translateX(0);
+}
+#text-box-one h4:nth-child(3){
+    transform: translateX(10%);
+}
+#text-box-one h4:nth-child(4){
+    transform: translateX(20%);
+}
+#text-box-one h4:nth-child(5){
+    transform: translateX(30%);
+}
+#text-box-one h4:nth-child(6){
+    transform: translateX(40%);
+}
+#text-box-one h4:nth-child(7){
+    transform: translateX(50%);
+}
+#text-box-two h4:nth-child(2){
+    transform: translateX(0);
+}
+#text-box-two h4:nth-child(3){
+    transform: translateX(10%);
+}
+
+#text-box-three h4:nth-child(2){
+    transform: translateX(0);
+}
+#text-box-three h4:nth-child(3){
+    transform: translateX(10%);
+}
+#text-box-three h4:nth-child(4){
+    transform: translateX(20%);
+}
+#page9{
+    height: 100vh;
+    width: 100%;
 }
