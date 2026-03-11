@@ -158,6 +158,7 @@ nav button svg {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #page1 h1 {
@@ -953,35 +954,35 @@ details[open] .titleBox i{
     transform: translateX(0);
 }
 #text-box-one h4:nth-child(3){
-    transform: translateX(10%);
+    transform: translateX(15%);
 }
 #text-box-one h4:nth-child(4){
-    transform: translateX(20%);
+    transform: translateX(25%);
 }
 #text-box-one h4:nth-child(5){
-    transform: translateX(30%);
+    transform: translateX(35%);
 }
 #text-box-one h4:nth-child(6){
-    transform: translateX(40%);
+    transform: translateX(45%);
 }
 #text-box-one h4:nth-child(7){
-    transform: translateX(50%);
+    transform: translateX(55%);
 }
 #text-box-two h4:nth-child(2){
     transform: translateX(0);
 }
 #text-box-two h4:nth-child(3){
-    transform: translateX(10%);
+    transform: translateX(15%);
 }
 
 #text-box-three h4:nth-child(2){
     transform: translateX(0);
 }
 #text-box-three h4:nth-child(3){
-    transform: translateX(10%);
+    transform: translateX(15%);
 }
 #text-box-three h4:nth-child(4){
-    transform: translateX(20%);
+    transform: translateX(35%);
 }
 #page9{
     height: 100vh;

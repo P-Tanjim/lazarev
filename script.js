@@ -24,7 +24,8 @@ function locomotiveAnimation() {
                 width: window.innerWidth,
                 height: window.innerHeight
             };
-        }
+        },
+        pinType: document.querySelector("main").style.transform ? "transform" : "fixed"
     });
 
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
@@ -63,22 +64,23 @@ function navAnimation() {
 function page2Animation() {
     rightElem.forEach((elem) => {
         const img = elem.querySelector("img");
-        elem.addEventListener("mouseenter", () => {
+        elem.addEventListener("mouseenter", (e) => {
             img.style.opacity = 1;
             img.style.scale = 1;
         });
-        elem.addEventListener("mouseleave", () => {
+        elem.addEventListener("mouseleave", (e) => {
             img.style.opacity = 0;
             img.style.scale = 0;
         });
         elem.addEventListener("mousemove", (e) => {
-            if (e.ClintX < elem.getBoundingClientRect.x) {
+            if (e.clientX < elem.getBoundingClientRect().x) {
                 img.style.opacity = 0;
                 img.style.scale = 0;
             }
-            img.style.left = `${e.x - elem.getBoundingClientRect().x}px`;
-            img.style.top = `${e.y - elem.getBoundingClientRect().y}px`;
+            img.style.left = `${e.clientX - elem.getBoundingClientRect().x}px`;
+            img.style.top = `${e.clientY - elem.getBoundingClientRect().y}px`;
             img.style.transform = 'translate(-50%, -50%)';
+
         })
     })
 }
@@ -159,11 +161,36 @@ function page8ScrollAnimation() {
         scrollTrigger: {
             trigger: ".scroll-animated-tex-box",
             scroller: "main",
-            start: "top 75%",
-            end: "top -10%",
+            start: "top 85%",
+            end: "top -30%",
             scrub: true
         }
     });
+}
+
+function loadingAnimation() {
+    tl.from('#page1', {
+        opacity: 0,
+        duration: 0.3,
+        delay: 0.2
+    });
+    tl.from('#page1', {
+        transform: 'scaleX(0.7) scaleY(0.2) translateY(80%)',
+        borderRadius: "150px",
+        duration: 2,
+        ease: "expo.out"
+    });
+
+    tl.from("#page1 h1, #page1 p, #page1 div", {
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.5,
+        delay: -1.5
+    })
+    tl.from("nav", {
+        opacity: 0,
+        delay: 0.6
+    }, "<")
 }
 const rightElem = document.querySelectorAll(".right-elem");
 const videoPlay = document.querySelector(".video-play .icon");
@@ -171,6 +198,8 @@ const video = document.querySelector("#page3 video");
 const rightSecVideo = document.querySelectorAll(".sec-right");
 const pageFiveBottomVideo = document.querySelectorAll('.block-one');
 const pageSixSliderBox = document.querySelectorAll('.page6-elem');
+const tl = gsap.timeline();
+
 
 
 locomotiveAnimation();
@@ -180,3 +209,4 @@ page3Animation();
 page5Animation();
 sliderAnimation();
 page8ScrollAnimation();
+loadingAnimation();
