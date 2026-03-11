@@ -1,3 +1,38 @@
+function locomotiveAnimation() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector("main"),
+        smooth: true,
+
+        tablet: { smooth: true },
+
+        smartphone: { smooth: true }
+    });
+    locoScroll.on("scroll", ScrollTrigger.update);
+
+    ScrollTrigger.scrollerProxy("main", {
+        scrollTop(value) {
+            return arguments.length
+                ? locoScroll.scrollTo(value, 0, 0)
+                : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+            return {
+                top: 0,
+                left: 0,
+                width: window.innerWidth,
+                height: window.innerHeight
+            };
+        }
+    });
+
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+    ScrollTrigger.refresh();
+
+}
+
 function navAnimation() {
     const nav = document.querySelector('nav');
     let tl = gsap.timeline({
@@ -118,18 +153,17 @@ function sliderAnimation() {
 }
 
 function page8ScrollAnimation() {
-        gsap.from(".scroll-animated-tex-box h4", {
-            x: 0,
-            duration: 5,
-            scrollTrigger: {
-                trigger: ".scroll-animated-tex-box",
-                scroller: "body",
-                start: "top 75%",
-                end: "top -10%",
-                markers: true,
-                scrub: true
-            }
-        });
+    gsap.from(".scroll-animated-tex-box h4", {
+        x: 0,
+        duration: 5,
+        scrollTrigger: {
+            trigger: ".scroll-animated-tex-box",
+            scroller: "main",
+            start: "top 75%",
+            end: "top -10%",
+            scrub: true
+        }
+    });
 }
 const rightElem = document.querySelectorAll(".right-elem");
 const videoPlay = document.querySelector(".video-play .icon");
@@ -138,6 +172,8 @@ const rightSecVideo = document.querySelectorAll(".sec-right");
 const pageFiveBottomVideo = document.querySelectorAll('.block-one');
 const pageSixSliderBox = document.querySelectorAll('.page6-elem');
 
+
+locomotiveAnimation();
 navAnimation();
 page2Animation();
 page3Animation();
