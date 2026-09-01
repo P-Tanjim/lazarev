@@ -65,22 +65,23 @@ function page2Animation() {
     rightElem.forEach((elem) => {
         const img = elem.querySelector("img");
         elem.addEventListener("mouseenter", (e) => {
-            img.style.opacity = 1;
-            img.style.scale = 1;
+            gsap.to(img, {
+                opacity: 1,
+                scale: 1
+            });
         });
         elem.addEventListener("mouseleave", (e) => {
-            img.style.opacity = 0;
-            img.style.scale = 0;
+            gsap.to(img, {
+                opacity: 0,
+                scale: 0
+            });
         });
         elem.addEventListener("mousemove", (e) => {
-            if (e.clientX < elem.getBoundingClientRect().x) {
-                img.style.opacity = 0;
-                img.style.scale = 0;
-            }
-            img.style.left = `${e.clientX - elem.getBoundingClientRect().x}px`;
-            img.style.top = `${e.clientY - elem.getBoundingClientRect().y}px`;
-            img.style.transform = 'translate(-50%, -50%)';
+            gsap.to(img, {
+                x: e.x - elem.getBoundingClientRect().x - img.offsetWidth/2,
+                y: e.y - elem.getBoundingClientRect().y -img.offsetHeight/2
 
+            })
         })
     })
 }
@@ -176,7 +177,7 @@ function loadingAnimation() {
     });
     tl.from('#page1', {
         transform: 'scaleX(0.7) scaleY(0.2) translateY(80%)',
-        borderRadius: "150px",
+        borderRadius: "80px",
         duration: 2,
         ease: "expo.out"
     });
@@ -194,7 +195,7 @@ function loadingAnimation() {
 }
 const rightElem = document.querySelectorAll(".right-elem");
 const videoPlay = document.querySelector(".video-play .icon");
-const video = document.querySelector("#page3 video");
+const video = document.querySelector("#page3-fullScreen-video video");
 const rightSecVideo = document.querySelectorAll(".sec-right");
 const pageFiveBottomVideo = document.querySelectorAll('.block-one');
 const pageSixSliderBox = document.querySelectorAll('.page6-elem');

@@ -323,7 +323,6 @@ nav button svg {
     left: 0;
     top: 0;
     scale: 0;
-    transition: opacity ease-in-out 0.4s, scale ease-in-out 0.4s, left ease-out 0.16s, top ease-out 0.16s;
     pointer-events: none;
     z-index: 3;
 }
@@ -383,7 +382,7 @@ nav button svg {
     transform: translateY(0%);
 }
 
-#page3 video {
+#page3-fullScreen-video video {
     height: 100%;
     width: 100%;
     position: absolute;
